@@ -1,0 +1,31 @@
+<ScreenOne>:
+    BoxLayout:
+        MDRaisedButton:
+            text: "Go to Screen 2"
+            background_color : 0, 0, 1, 1
+            pos_hint: {'center_x': .3,'center_y': .5}
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.transition.duration = 0.5
+                root.manager.current = 'screen_two'
+<ScreenTwo>:
+    BoxLayout:
+        MDRaisedButton:
+            text: "Go to Screen 3"
+            background_color : 1, 1, 0, 1
+            pos_hint: {'center_x': .3,'center_y': .5}
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.transition.duration = 0.5
+                root.manager.current = 'screen_three'
+ 
+<ScreenThree>:
+    BoxLayout:
+        MDRaisedButton:
+            text: "Go to Screen 4"
+            background_color : 1, 0, 1, 1
+            pos_hint: {'center_x': .3,'center_y': .5}
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.transition.duration = 0.5
+                root.manager.current = 'screen_one'

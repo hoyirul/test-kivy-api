@@ -1,0 +1,79 @@
+<registerScreen>
+
+    usernameInput: usernameInput
+    emailInput: emailInput
+    passwordInput: passwordInput
+    
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+
+            Label: 
+                text: "Username: "
+
+            TextInput: 
+                multiline: False
+                id: usernameInput
+            
+            Label: 
+                text: "Email: "
+            
+            TextInput: 
+                multiline: False
+                id: emailInput
+
+            Label: 
+                text: "Password: "
+
+            TextInput: 
+                multiline: False
+                id: passwordInput
+
+        Button: 
+            on_press: root.addInfoToDB()
+            text: "Submit"
+            size_hint: (.5, .4)
+            
+        Button: 
+            on_press: root.manager.current = 'login'
+            text: "Login"
+            size_hint: (.5, .4)
+
+<loginScreen>
+
+    usernameInputLogin: usernameInputLogin
+    passwordInputLogin: passwordInputLogin
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+
+            Label: 
+                text: "Username: "
+
+            TextInput: 
+                multiline: False
+                id: usernameInputLogin
+
+            Label: 
+                text: "Password: "
+
+            TextInput: 
+                multiline: False
+                id: passwordInputLogin
+            
+        Button: 
+            on_press: root.checkIfDetailsExist()
+            text: "Submit"
+            size_hint: (.5, .4)
+        
+        Button: 
+            on_press: root.manager.current = 'register'
+            text: "Register"
+            size_hint: (.5, .4)
